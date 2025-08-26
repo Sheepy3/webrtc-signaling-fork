@@ -1,3 +1,6 @@
+# webrtc-signaling-fork
+this fork hosts some basic modifications for figuring out how to use webRTC networking. 
+
 # A WebSocket signaling server/client for WebRTC.
 
 This demo is divided in 4 parts:
@@ -46,4 +49,3 @@ For relayed messages (i.e. for `OFFER`, `ANSWER`, and `CANDIDATE`), the client w
 ## Screenshots
 
 ![Screenshot](screenshots/screenshot.png)
-# webrtc-signaling-fork
