@@ -22,6 +22,18 @@ func _ready() -> void:
 func ping(argument: float) -> void:
 	_log("[Multiplayer] Ping from peer %d: arg: %f" % [multiplayer.get_remote_sender_id(), argument])
 
+@rpc("any_peer","call_local")
+func roll_dice() -> void:
+	if not multiplayer.is_server():
+		return
+	var roll = randi_range(1,6)
+	transmit_dice.rpc(roll)
+
+@rpc("authority","call_local")
+func transmit_dice(dice_number) -> void:
+	_log("the number rolled by the server was " + str(dice_number))
+	pass
+	
 
 func _mp_server_connected() -> void:
 	_log("[Multiplayer] Server connected (I am %d)" % client.rtc_mp.get_unique_id())
@@ -81,4 +93,4 @@ func _on_stop_pressed() -> void:
 
 
 func _on_roll_pressed() -> void:
-	pass # Replace with function body.
+	roll_dice.rpc()
