@@ -78,3 +78,7 @@ func _on_start_pressed() -> void:
 
 func _on_stop_pressed() -> void:
 	client.stop()
+
+
+func _on_roll_pressed() -> void:
+	pass # Replace with function body.

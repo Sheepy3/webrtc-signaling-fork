@@ -72,6 +72,10 @@ text = "Ping"
 layout_mode = 2
 text = "Print peers"
 
+[node name="Roll" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Roll Dice"
+
 [node name="TextEdit" type="TextEdit" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -81,3 +85,4 @@ size_flags_vertical = 3
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Seal" to="." method="_on_seal_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Ping" to="." method="_on_ping_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Peers" to="." method="_on_peers_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Roll" to="." method="_on_roll_pressed"]
